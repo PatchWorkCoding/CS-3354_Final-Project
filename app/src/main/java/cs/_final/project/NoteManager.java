@@ -11,7 +11,7 @@ public class NoteManager implements ActionListener {
     String saveDirectory = "Note_Folder";
     
     JPanel notesField;
-    JPanel NotesPanel;
+    JPanel notesPanel;
 
     public NoteManager() {
         CreateWindow();
@@ -36,8 +36,8 @@ public class NoteManager implements ActionListener {
     }
 
     void PopulateNotesField() {
-        NotesPanel = new JPanel(new GridLayout(0,2, 10, 10));
-        notesField.add(NotesPanel, BorderLayout.CENTER);
+        notesPanel = new JPanel(new GridLayout(0,2, 10, 10));
+        notesField.add(notesPanel, BorderLayout.CENTER);
 
         //Open up the save directory
         File NotesFolder = new File(saveDirectory);
@@ -64,7 +64,7 @@ public class NoteManager implements ActionListener {
 
             OpenNoteButton.setActionCommand("open");
             OpenNoteButton.addActionListener(noteToOpen);
-            NotesPanel.add(OpenNoteButton);      
+            notesPanel.add(OpenNoteButton);      
             notesField.updateUI(); 
     }
 
